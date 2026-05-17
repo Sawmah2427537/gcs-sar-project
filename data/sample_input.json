@@ -1,0 +1,37 @@
+{
+  "sar_points": [
+    {
+      "id": "S1",
+      "lat": 25.0330,
+      "lon": 121.5654,
+      "priority": 1,
+      "hover_time": 30
+    },
+    {
+      "id": "S2",
+      "lat": 25.0340,
+      "lon": 121.5660,
+      "priority": 1,
+      "hover_time": 30
+    }
+  ],
+  "tal_points": [
+    {
+      "id": "T1",
+      "lat": 25.0320,
+      "lon": 121.5640
+    }
+  ],
+  "uavs": [
+    {
+      "id": "UAV1",
+      "speed": 8,
+      "battery_time": 900
+    },
+    {
+      "id": "UAV2",
+      "speed": 8,
+      "battery_time": 900
+    }
+  ]
+}
