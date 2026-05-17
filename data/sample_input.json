@@ -15,13 +15,6 @@
       "hover_time": 30
     }
   ],
-  "tal_points": [
-    {
-      "id": "T1",
-      "lat": 25.0320,
-      "lon": 121.5640
-    }
-  ],
   "uavs": [
     {
       "id": "UAV1",
