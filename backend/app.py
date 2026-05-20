@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from planner.planner import plan_mission
 
 app = Flask(__name__)
 CORS(app)
@@ -17,25 +18,12 @@ def plan():
     sar_points = data.get("sar_points", [])
     uavs = data.get("uavs", [])
 
-    if not uavs:
-        return jsonify({
-            "error": "No UAV data provided"
-        }), 400
+    result = plan_mission(sar_points, uavs)
 
-    missions = []
+    if "error" in result:
+        return jsonify(result), 400
 
-    for index, uav in enumerate(uavs):
-        assigned_points = sar_points[index::len(uavs)]
-
-        missions.append({
-            "uav_id": uav["id"],
-            "path": assigned_points,
-            "eta": len(assigned_points) * 30
-        })
-
-    return jsonify({
-        "missions": missions
-    })
+    return jsonify(result)
 
 if __name__ == "__main__":
     app.run(debug=True)
